@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta property="og:title" content="I Ragazzi dello Sporting">
+<meta property="og:description" content="Il sito ufficiale della squadra: marcatori, premi e news!">
+<meta property="og:image" content="https://iragazzidellosporting.it/ragazzisporting.jpg"> <meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Ragazzi dello Sporting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f3e9d2; 
+            --main-black: #1a1a1a;
+            --gold: #d4af37;
+            --white: #ffffff;
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color); color: var(--main-black);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 5%; background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000; height: 70px;
+        }
+
+        nav a {
+            text-decoration: none; color: var(--main-black);
+            font-weight: bold; text-transform: uppercase; font-size: 0.85rem;
+            cursor: pointer; margin-right: 20px; transition: 0.3s;
+        }
+        nav a:hover, nav a.active { color: var(--gold); }
+        .logo-header { height: 45px; width: auto; border-radius: 4px; }
+
+        /* --- HOME --- */
+        #home {
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; height: calc(100vh - 70px);
+            width: 100%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('ragazzisporting.jpg');
+            background-size: cover; background-position: center; position: relative; color: var(--white);
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem; margin: 0; color: var(--gold);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.7); text-transform: uppercase;
+        }
+
+        .social-bar-home {
+            position: absolute; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px); padding: 25px 0; display: flex;
+            flex-direction: column; align-items: center; gap: 15px; border-top: 2px solid var(--gold);
+        }
+
+        .social-text { color: var(--white); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 300; }
+
+        /* --- CONTENUTI COMUNI --- */
+        .other-container { max-width: 900px; margin: 40px auto; padding: 0 20px; min-height: 70vh; }
+        .content-section { display: none; }
+        
+        .card { 
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px; 
+            margin-bottom: 15px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            border-left: 5px solid var(--gold);
+        }
+
+        /* --- GRIGLIA PREMI ALLINEATA --- */
+        .premi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .premi-card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Allinea contenuto sopra e sotto */
+            align-items: center;
+            min-height: 200px; /* Altezza uniforme per tutte */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premi-card i.fa-crown { color: var(--gold); font-size: 2rem; margin-bottom: 10px; z-index: 2; }
+        .premi-card h3 { margin: 5px 0; font-size: 0.9rem; text-transform: uppercase; color: #555; z-index: 2; }
+        .premi-card .nome-mvp { color: var(--gold); font-weight: bold; font-size: 1.1rem; margin: 10px 0; z-index: 2; }
+        .premi-card .badge-ruolo { font-size: 0.75rem; background: #eee; padding: 4px 10px; border-radius: 5px; z-index: 2; }
+        
+        .bg-icon {
+            position: absolute; top: 10px; right: 10px; opacity: 0.05; font-size: 4rem; transform: rotate(15deg); z-index: 1;
+        }
+
+/* --- MARCATORI PRO STYLE --- */
+.marcatori-container {
+    margin-top: 25px;
+}
+.marcatore-row {
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.marcatore-row:hover {
+    transform: translateX(10px);
+    border-color: var(--gold);
+}
+
+.pos-numero {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ddd;
+    min-width: 30px;
+}
+
+/* Colore speciale per il primo in classifica */
+.marcatore-row:first-child .pos-numero {
+    color: var(--gold);
+}
+
+.info-bomber {
+    flex-grow: 1;
+}
+
+.nome-bomber {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.stat-bar-bg {
+    background: #eee;
+    height: 8px;
+    border-radius: 4px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    background: linear-gradient(90deg, var(--gold), #f1c40f);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+.gol-count {
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: var(--main-black);
+    min-width: 40px;
+    text-align: right;
+}
+
+.gol-count i {
+    font-size: 0.8rem;
+    color: var(--gold);
+    margin-left: 5px;
+}
+
+
+
+
+
+        /* Squadra */
+        .player-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .player-tag {
+            display: inline-block; background: #f0f0f0; padding: 6px 14px;
+            border-radius: 20px; cursor: pointer; transition: 0.3s; 
+            font-weight: 500; border: 1px solid #ddd; font-size: 0.9rem;
+        }
+        .player-tag:hover { background: var(--gold); color: white; border-color: var(--main-black); }
+
+        /* Modale */
+        .player-modal {
+            display: none; position: fixed; z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+        }
+        .modal-body {
+            background: var(--bg-color); margin: 5% auto; padding: 30px;
+            border: 3px solid var(--gold); width: 85%; max-width: 400px;
+            border-radius: 20px; text-align: center; position: relative;
+            animation: slideUp 0.4s ease-out;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 30px; cursor: pointer; }
+        .p-photo { width: 160px; height: 160px; border-radius: 50%; border: 4px solid var(--gold); margin-bottom: 15px; object-fit: cover; background: white; }
+        
+        table { width: 100%; background: white; border-collapse: collapse; border-radius: 12px; overflow: hidden; margin-top: 20px; }
+        th { background: var(--main-black); color: var(--gold); padding: 15px; text-align: left; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+        footer { background: var(--main-black); color: white; text-align: center; padding: 20px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav id="mainNav">
+            <a onclick="showSection('home')" data-section="home">Home</a>
+            <a onclick="showSection('squadra')" data-section="squadra">Squadra</a>
+            <a onclick="showSection('marcatori')" data-section="marcatori">Marcatori</a>
+            <a onclick="showSection('premi')" data-section="premi">Premi</a>
+            <a onclick="showSection('partite')" data-section="partite">Partite</a>
+            <a onclick="showSection('notizie')" data-section="mercato">Notizie</a>
+        </nav>
+        <img src="ragazzisporting.jpg" alt="Logo" class="logo-header">
+    </header>
+
+    <section id="home" class="content-section">
+        <div class="home-content">
+            <h1>I RAGAZZI DELLO SPORTING</h1>
+            <p style="font-size: 1.5rem; font-weight: 300; letter-spacing: 2px;">FACCIAMO CALCIO</p>
+        </div>
+        <div class="social-bar-home">
+            <span class="social-text">Segui i ragazzi dello sporting sui social</span>
+            <div class="social-icons-wrapper">
+                <a href="https://instagram.com/iragazzidellosporting" target="_blank" style="color:white; font-size:2rem;"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div id="other-sections-wrapper" class="other-container">
+
+        <section id="squadra" class="content-section">
+            <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">La Squadra</h2>
+            <p><small>Clicca su un nome per vedere la scheda tecnica</small></p>
+            
+            <div class="card">
+                <strong><i class="fas fa-hands"></i> PORTIERI</strong>
+                <div class="player-list">
+                    <span class="player-tag" onclick="openProfile('Francesco Labate', 'Portiere', '0', 'fralabate.jpg')">Francesco Labate</span>
+                    <span class="player-tag" onclick="openProfile('Andrea Nitti (Snake)', 'Portiere', '0', 'andrea_nitti.jpg')">Andrea Nitti(Snake)</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <strong><i class="fas fa-shield-alt"></i> DIFENSORI</strong>
+                <div class="player-list">
+                    <span class="player-tag" onclick="openProfile('Francesco Urso', 'DC','0', 'francesco_urso.jpg')">Francesco Urso</span>
+                    <span class="player-tag" onclick="openProfile('Federico Sardara', 'DC', '0', 'federico_sardara.jpg')">Federico Sardara</span>
+                    <span class="player-tag" onclick="openProfile('Alexandru', 'TD', '0', 'alexandru.jpg')">Alexandru</span>
+                    <span class="player-tag" onclick="openProfile('Andrea Iacovone (Iaco)', 'DC', '0', 'iacovone.jpg')">Iaco</span>
+                    <span class="player-tag" onclick="openProfile('Simone Laineri', 'TS', '0', 'simone_laineri.jpg')">Simone Laineri</span>
+                    <span class="player-tag" onclick="openProfile('Valerio Aiello', 'DC', '0', 'valerio_aiello.jpg')">Valerio Aiello</span>
+                    <span class="player-tag" onclick="openProfile('Davide Frigato (Friga)', 'TS', '0', 'frigato.jpg')">Davide Frigato</span>
+                    <span class="player-tag" onclick="openProfile('Alessandro Carbonara', 'TS', '0', 'carbonara.jpg')">Alessandro Carbonara</span>
+                    <span class="player-tag" onclick="openProfile('Flavio', 'TD', '0', 'francesco_urso.jpg')">Flavio</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <strong><i class="fas fa-running"></i> CENTROCAMPISTI</strong>
+                <div class="player-list">
+                    <span class="player-tag" onclick="openProfile('Giuseppe Laineri (Peppix)', 'ES', '0', 'peppix.jpg','idolo di Soule')">Peppix</span>
+                    <span class="player-tag" onclick="openProfile('Mike Lo Bartolo (MikeLove)', 'CC', '0', 'mike_lobartolo.jpg')">MikeLove</span>
+                    <span class="player-tag" onclick="openProfile('Riccardo Labate', 'ED', '0', 'riccardo_labate.jpg')">Riccardo Labate</span>
+                    <span class="player-tag" onclick="openProfile('Lion', 'ED', '0', 'lion.jpg')">Lion</span>
+                    <span class="player-tag" onclick="openProfile('Ivan Lo Bartolo', 'CC', '0', 'ivan_lobartolo.jpg')">Ivan Lo Bartolo</span>
+                    <span class="player-tag" onclick="openProfile('Vincenzo Corigliano', 'ES', '0', 'corigliano.jpg')">Vincenzo Corigliano</span>
+                    <span class="player-tag" onclick="openProfile('Gabriel Kiwi', 'CC', '0', 'kiwi.jpg')">Gabriel Kiwi</span>
+                    <span class="player-tag" onclick="openProfile('Alessandro Macario (Maca)', 'CC', '0', 'macario.jpg')">Maca</span>
+                    <span class="player-tag" onclick="openProfile('Danilo Carrabino', 'ED', '0', 'carrabino.jpg')">Danilo Carrabino</span>
+                    <span class="player-tag" onclick="openProfile('Francesco Paoli', 'ES', '0', 'paoli.jpg')">Francesco Paoli</span>
+                    <span class="player-tag" onclick="openProfile('Mattia Scara', 'ES', '0', 'paoli.jpg')">Mattia Scara</span>
+                    <span class="player-tag" onclick="openProfile('Alessio Attene', 'CC', '0', 'paoli.jpg')">Alessio Attene</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <strong><i class="fas fa-bullseye"></i> ATTACCANTI</strong>
+                <div class="player-list">
+                    <span class="player-tag" onclick="openProfile('Daniel Giordano (Giorda)', 'ATT', '0', 'daniel_giordano.jpg')">Giorda</span>
+                    <span class="player-tag" onclick="openProfile('ScionPol', 'ATT', '0', 'scionpol.jpg')">ScionPol</span>
+                    <span class="player-tag" onclick="openProfile('Marcello', 'ATT', '0', 'marcello.jpg')">Marcello</span>
+                    <span class="player-tag" onclick="openProfile('Andrea Russo', 'ATT', '0', 'rvski.jpg')">Rvski</span>
+                    <span class="player-tag" onclick="openProfile('Jurgen', 'ATT', '0', 'rvski.jpg')">Jurgen</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="marcatori" class="content-section">
+    <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Classifica Marcatori</h2>
+    <p><small>La corsa alla scarpa d'oro dello Sporting</small></p>
+
+    <div class="marcatori-container">
+        
+        <div class="marcatore-row">
+            <div class="pos-numero">1</div>
+            <div class="info-bomber">
+                <span class="nome-bomber">Daniel Giordano (Giorda)</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" style="width: 0%;"></div> </div>
+            </div>
+            <div class="gol-count">0<i class="fas fa-futbol"></i></div>
+        </div>
+
+        <div class="marcatore-row">
+            <div class="pos-numero">2</div>
+            <div class="info-bomber">
+                <span class="nome-bomber">Giuseppe Laineri (Peppix)</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" style="width: 0%;"></div> </div>
+            </div>
+            <div class="gol-count">0<i class="fas fa-futbol"></i></div>
+        </div>
+
+        <div class="marcatore-row">
+            <div class="pos-numero">3</div>
+            <div class="info-bomber">
+                <span class="nome-bomber">Simone Laineri</span>
+                <div class="stat-bar-bg">
+                    <div class="stat-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="gol-count">0<i class="fas fa-futbol"></i></div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="notizie" class="content-section">
+    <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Notizie & Rumors</h2>
+    <p><small>Tutte le indiscrezioni sui Ragazzi dello Sporting</small></p>
+
+    <div style="margin-top: 20px;">
+        
+        <div class="card" style="border-left: 5px solid #e74c3c; position: relative;">
+            <span style="position: absolute; top: 10px; right: 15px; background: #e74c3c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; animation: pulse 1.5s infinite;">BREAKING NEWS</span>
+            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                <div style="font-size: 2rem; color: #e74c3c;"><i class="fas fa-fire"></i></div>
+                <div>
+                    <h4 style="margin: 0; color: var(--main-black);">Peppix nel mirino della Nazionale?</h4>
+                    <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
+                        Voci insistenti vedono il nostro capitano osservato speciale. Lui smentisce: "Penso solo allo Sporting."
+                    </p>
+                    <small style="color: #999;"><i class="far fa-clock"></i> 2 ore fa</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-left: 5px solid #3498db;">
+            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                <div style="font-size: 2rem; color: #3498db;"><i class="fas fa-handshake"></i></div>
+                <div>
+                    <h4 style="margin: 0; color: var(--main-black);">Nuovo acquisto in arrivo?</h4>
+                    <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
+                        Il DS sta trattando un nuovo innesto per la difesa. Si parla di un parametro zero con ottime doti di resistenza alla birra post-partita.
+                    </p>
+                    <small style="color: #999;"><i class="far fa-clock"></i> 5 ore fa</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-left: 5px solid var(--gold);">
+            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                <div style="font-size: 2rem; color: var(--gold);"><i class="fas fa-search-dollar"></i></div>
+                <div>
+                    <h4 style="margin: 0; color: var(--main-black);">Rinnovo complicato per Giorda</h4>
+                    <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
+                        L'attaccante chiede un aumento del premio partita (due pizze invece di una). Le parti si riaggiorneranno dopo la prossima tripletta.
+                    </p>
+                    <small style="color: #999;"><i class="far fa-clock"></i> Ieri</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <style>
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</section>
+
+
+
+
+        <section id="premi" class="content-section">
+            <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Bacheca Premi</h2>
+            <p><small>I riconoscimenti ufficiali della stagione 2026</small></p>
+
+            <div class="premi-grid">
+                
+                <div class="premi-card">
+                    <div class="bg-icon"><i class="fas fa-hands"></i></div>
+                    <i class="fas fa-crown"></i>
+                    <h3>MVP Gennaio</h3>
+                    <p class="nome-mvp">Da Assegnare</p>
+                    <div class="badge-ruolo">Miglior Portiere</div>
+                </div>
+
+                <div class="premi-card">
+                    <div class="bg-icon"><i class="fas fa-shield-alt"></i></div>
+                    <i class="fas fa-crown"></i>
+                    <h3>MVP Gennaio</h3>
+                    <p class="nome-mvp">Da Assegnare</p>
+                    <div class="badge-ruolo">Miglior Difensore</div>
+                </div>
+
+                <div class="premi-card">
+                    <div class="bg-icon"><i class="fas fa-magic"></i></div>
+                    <i class="fas fa-crown"></i>
+                    <h3>MVP Gennaio</h3>
+                    <p class="nome-mvp">Da Assegnare</p>
+                    <div class="badge-ruolo">Miglior Centrocampista</div>
+                </div>
+
+                <div class="premi-card">
+                    <div class="bg-icon"><i class="fas fa-fire"></i></div>
+                    <i class="fas fa-crown"></i>
+                    <h3>MVP Gennaio</h3>
+                    <p class="nome-mvp">Da Assegnare</p>
+                    <div class="badge-ruolo">Miglior Attaccante</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partite" class="content-section">
+    <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Calendario e Risultati</h2>
+    
+    <div style="margin-top: 20px;">
+        <p style="text-transform: uppercase; font-weight: bold; font-size: 0.8rem; color: var(--gold); margin-bottom: 10px;">L'ultimo match</p>
+        <div class="card" style="text-align: center; border-left: none; border-top: 5px solid var(--gold); padding: 30px 20px;">
+            
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: #555; background: #f9f9f9; padding: 8px; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-map-marker-alt" style="color: var(--gold);"></i>
+                <span><strong>Luogo da definire</strong></span>
+            </div>
+
+            <div style="display: flex; justify-content: space-around; align-items: center; gap: 10px;">
+                <div style="flex: 1;">
+                    <img src="ragazzisporting.jpg" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #eee; margin-bottom: 10px;">
+                    <div style="font-weight: bold; font-size: 1.1rem;">Sporting White</div>
+                    <div style="margin-top: 20px; font-style: italic; color: #555; font-size: 0.9rem;">
+                        Marcatori:
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--main-black);">In Attesa</div>
+                    <div style="font-size: 0.7rem; color: #777; text-transform: uppercase;">Data da definire</div>
+                </div>
+                <div style="flex: 1;">
+                    <img src="ragazzisporting.jpg" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #eee; margin-bottom: 10px;">
+                    <div style="font-weight: bold; font-size: 1.1rem;">Sporting Black</div>
+                    <div style="margin-top: 20px; font-style: italic; color: #555; font-size: 0.9rem;">
+                        Marcatori:
+                    </div>
+                </div>
+            </div>                  
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <p style="text-transform: uppercase; font-weight: bold; font-size: 0.8rem; color: #777; margin-bottom: 10px;">Risultati Precedenti</p>
+        <div class="card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 15px 25px;">
+            <span style="font-weight: 500;">Sporting White</span>
+            <span style="background: var(--main-black); color: var(--gold); padding: 4px 12px; border-radius: 4px; font-weight: bold;"></span>
+            <span style="font-weight: 500;">Sporting Black</span>
+        </div>
+    </div>
+</section>
+    </div>
+
+    <div id="playerModal" class="player-modal">
+        <div class="modal-body">
+            <span class="close-btn" onclick="closeProfile()">&times;</span>
+            <img id="pModalImg" src="ragazzisporting.jpg" class="p-photo">
+            <h2 id="pName" style="color: var(--gold); margin: 5px 0;"></h2>
+            <p id="pRole" style="text-transform: uppercase; font-weight: bold; color: #555;"></p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px;">
+                <div style="background: white; padding: 10px; border-radius: 10px;"><strong>Gol</strong><br><span id="pSkill"></span></div>
+                <div style="background: white; padding: 10px; border-radius: 10px;"><strong>Caratteristiche</strong><br><span id="pStatus" style="font-size: 0.85rem;"></span>
+</div>
+            </div>
+            <button onclick="closeProfile()" style="margin-top:25px; padding:10px 25px; background:var(--main-black); color:var(--gold); border:none; border-radius:5px; cursor:pointer; font-weight:bold;">TORNA ALLA SQUADRA</button>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 I Ragazzi dello Sporting</footer>
+
+    <script>
+        function showSection(sectionId) {
+            const allSections = document.querySelectorAll('.content-section');
+            allSections.forEach(s => s.style.display = 'none');
+            
+            const links = document.querySelectorAll('nav a');
+            links.forEach(l => l.classList.remove('active'));
+            
+            const wrapper = document.getElementById('other-sections-wrapper');
+            const homeSection = document.getElementById('home');
+
+            if (sectionId === 'home') {
+                wrapper.style.display = 'none';
+                homeSection.style.display = 'flex';
+            } else {
+                wrapper.style.display = 'block';
+                homeSection.style.display = 'none';
+                const target = document.getElementById(sectionId);
+                if(target) target.style.display = 'block';
+            }
+
+            const activeLink = document.querySelector(`nav a[data-section="${sectionId}"]`);
+            if(activeLink) activeLink.classList.add('active');
+            localStorage.setItem('lastSection', sectionId);
+        }
+
+        window.onload = function() {
+            const savedSection = localStorage.getItem('lastSection') || 'home';
+            showSection(savedSection);
+        };
+
+        function openProfile(name, role, skill, photoUrl, statusText) {
+    document.getElementById('pName').innerText = name;
+    document.getElementById('pRole').innerText = role;
+    document.getElementById('pSkill').innerText = skill;
+    
+    // Questa riga aggiorna lo status con il testo personalizzato
+    document.getElementById('pStatus').innerText = statusText || "Disponibile";
+    
+    const modalImg = document.getElementById('pModalImg');
+    modalImg.src = photoUrl;
+    modalImg.onerror = function() { this.src = 'ragazzisporting.jpg'; };
+    document.getElementById('playerModal').style.display = 'block';
+}
+
+        function closeProfile() {
+            document.getElementById('playerModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('playerModal')) { closeProfile(); }
+        }
+    </script>
+</body>
+</html>
