@@ -2,24 +2,28 @@
 <html lang="it">
 <head>
     <meta property="og:title" content="I Ragazzi dello Sporting">
-<meta property="og:description" content="Il sito ufficiale della squadra: marcatori, premi e news!">
-<meta property="og:image" content="https://iragazzidellosporting.it/ragazzisporting.jpg"> <meta property="og:type" content="website">
+    <meta property="og:description" content="Il sito ufficiale della squadra: marcatori, premi e news!">
+    <meta property="og:image" content="https://iragazzidellosporting.it/ragazzisporting.jpg">
+    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Ragazzi dello Sporting</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #f3e9d2; 
+            --bg-color: #f3e9d2;
             --main-black: #1a1a1a;
             --gold: #d4af37;
             --white: #ffffff;
         }
 
         body, html {
-            margin: 0; padding: 0; height: 100%;
+            margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color); color: var(--main-black);
+            background-color: var(--bg-color);
+            color: var(--main-black);
             overflow-x: hidden;
         }
 
@@ -28,53 +32,105 @@
             background: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 0 5%; background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 1000; height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
         }
 
         nav a {
-            text-decoration: none; color: var(--main-black);
-            font-weight: bold; text-transform: uppercase; font-size: 0.85rem;
-            cursor: pointer; margin-right: 20px; transition: 0.3s;
+            text-decoration: none;
+            color: var(--main-black);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-right: 20px;
+            transition: 0.3s;
         }
-        nav a:hover, nav a.active { color: var(--gold); }
-        .logo-header { height: 45px; width: auto; border-radius: 4px; }
+
+            nav a:hover, nav a.active {
+                color: var(--gold);
+            }
+
+        .logo-header {
+            height: 45px;
+            width: auto;
+            border-radius: 4px;
+        }
 
         /* --- HOME --- */
         #home {
-            display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; height: calc(100vh - 70px);
-            width: 100%; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('ragazzisporting.jpg');
-            background-size: cover; background-position: center; position: relative; color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: calc(100vh - 70px);
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('ragazzisporting.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--white);
         }
 
         .home-content h1 {
-            font-size: 3.5rem; margin: 0; color: var(--gold);
-            text-shadow: 2px 2px 15px rgba(0,0,0,0.7); text-transform: uppercase;
+            font-size: 3.5rem;
+            margin: 0;
+            color: var(--gold);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
+            text-transform: uppercase;
         }
 
         .social-bar-home {
-            position: absolute; bottom: 0; width: 100%; background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px); padding: 25px 0; display: flex;
-            flex-direction: column; align-items: center; gap: 15px; border-top: 2px solid var(--gold);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 25px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            border-top: 2px solid var(--gold);
         }
 
-        .social-text { color: var(--white); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 300; }
+        .social-text {
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
 
         /* --- CONTENUTI COMUNI --- */
-        .other-container { max-width: 900px; margin: 40px auto; padding: 0 20px; min-height: 70vh; }
-        .content-section { display: none; }
-        
-        .card { 
+        .other-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            min-height: 70vh;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 20px; 
-            margin-bottom: 15px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-left: 5px solid var(--gold);
         }
 
@@ -102,122 +158,236 @@
             overflow: hidden;
         }
 
-        .premi-card i.fa-crown { color: var(--gold); font-size: 2rem; margin-bottom: 10px; z-index: 2; }
-        .premi-card h3 { margin: 5px 0; font-size: 0.9rem; text-transform: uppercase; color: #555; z-index: 2; }
-        .premi-card .nome-mvp { color: var(--gold); font-weight: bold; font-size: 1.1rem; margin: 10px 0; z-index: 2; }
-        .premi-card .badge-ruolo { font-size: 0.75rem; background: #eee; padding: 4px 10px; border-radius: 5px; z-index: 2; }
-        
+            .premi-card i.fa-crown {
+                color: var(--gold);
+                font-size: 2rem;
+                margin-bottom: 10px;
+                z-index: 2;
+            }
+
+            .premi-card h3 {
+                margin: 5px 0;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                color: #555;
+                z-index: 2;
+            }
+
+            .premi-card .nome-mvp {
+                color: var(--gold);
+                font-weight: bold;
+                font-size: 1.1rem;
+                margin: 10px 0;
+                z-index: 2;
+            }
+
+            .premi-card .badge-ruolo {
+                font-size: 0.75rem;
+                background: #eee;
+                padding: 4px 10px;
+                border-radius: 5px;
+                z-index: 2;
+            }
+
         .bg-icon {
-            position: absolute; top: 10px; right: 10px; opacity: 0.05; font-size: 4rem; transform: rotate(15deg); z-index: 1;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: 0.05;
+            font-size: 4rem;
+            transform: rotate(15deg);
+            z-index: 1;
         }
 
-/* --- MARCATORI PRO STYLE --- */
-.marcatori-container {
-    margin-top: 25px;
-}
-.marcatore-row {
-    background: white;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: 0.3s;
-    border: 1px solid transparent;
-}
+        /* --- MARCATORI PRO STYLE --- */
+        .marcatori-container {
+            margin-top: 25px;
+        }
 
-.marcatore-row:hover {
-    transform: translateX(10px);
-    border-color: var(--gold);
-}
+        .marcatore-row {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
 
-.pos-numero {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #ddd;
-    min-width: 30px;
-}
+            .marcatore-row:hover {
+                transform: translateX(10px);
+                border-color: var(--gold);
+            }
 
-/* Colore speciale per il primo in classifica */
-.marcatore-row:first-child .pos-numero {
-    color: var(--gold);
-}
+        .pos-numero {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ddd;
+            min-width: 30px;
+        }
 
-.info-bomber {
-    flex-grow: 1;
-}
+        /* Colore speciale per il primo in classifica */
+        .marcatore-row:first-child .pos-numero {
+            color: var(--gold);
+        }
 
-.nome-bomber {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-}
+        .info-bomber {
+            flex-grow: 1;
+        }
 
-.stat-bar-bg {
-    background: #eee;
-    height: 8px;
-    border-radius: 4px;
-    width: 100%;
-    overflow: hidden;
-}
+        .nome-bomber {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
 
-.stat-bar-fill {
-    background: linear-gradient(90deg, var(--gold), #f1c40f);
-    height: 100%;
-    border-radius: 4px;
-    transition: width 1s ease-in-out;
-}
+        .stat-bar-bg {
+            background: #eee;
+            height: 8px;
+            border-radius: 4px;
+            width: 100%;
+            overflow: hidden;
+        }
 
-.gol-count {
-    font-weight: 900;
-    font-size: 1.4rem;
-    color: var(--main-black);
-    min-width: 40px;
-    text-align: right;
-}
+        .stat-bar-fill {
+            background: linear-gradient(90deg, var(--gold), #f1c40f);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
 
-.gol-count i {
-    font-size: 0.8rem;
-    color: var(--gold);
-    margin-left: 5px;
-}
+        .gol-count {
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--main-black);
+            min-width: 40px;
+            text-align: right;
+        }
+
+            .gol-count i {
+                font-size: 0.8rem;
+                color: var(--gold);
+                margin-left: 5px;
+            }
 
 
 
 
 
         /* Squadra */
-        .player-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .player-tag {
-            display: inline-block; background: #f0f0f0; padding: 6px 14px;
-            border-radius: 20px; cursor: pointer; transition: 0.3s; 
-            font-weight: 500; border: 1px solid #ddd; font-size: 0.9rem;
+        .player-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
         }
-        .player-tag:hover { background: var(--gold); color: white; border-color: var(--main-black); }
+
+        .player-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 500;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+
+            .player-tag:hover {
+                background: var(--gold);
+                color: white;
+                border-color: var(--main-black);
+            }
 
         /* Modale */
         .player-modal {
-            display: none; position: fixed; z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
         }
+
         .modal-body {
-            background: var(--bg-color); margin: 5% auto; padding: 30px;
-            border: 3px solid var(--gold); width: 85%; max-width: 400px;
-            border-radius: 20px; text-align: center; position: relative;
+            background: var(--bg-color);
+            margin: 5% auto;
+            padding: 30px;
+            border: 3px solid var(--gold);
+            width: 85%;
+            max-width: 400px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
             animation: slideUp 0.4s ease-out;
         }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .close-btn { position: absolute; right: 20px; top: 15px; font-size: 30px; cursor: pointer; }
-        .p-photo { width: 160px; height: 160px; border-radius: 50%; border: 4px solid var(--gold); margin-bottom: 15px; object-fit: cover; background: white; }
-        
-        table { width: 100%; background: white; border-collapse: collapse; border-radius: 12px; overflow: hidden; margin-top: 20px; }
-        th { background: var(--main-black); color: var(--gold); padding: 15px; text-align: left; }
-        td { padding: 15px; border-bottom: 1px solid #eee; }
-        footer { background: var(--main-black); color: white; text-align: center; padding: 20px; font-size: 0.8rem; }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .p-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            margin-bottom: 15px;
+            object-fit: cover;
+            background: white;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        th {
+            background: var(--main-black);
+            color: var(--gold);
+            padding: 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        footer {
+            background: var(--main-black);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -252,7 +422,7 @@
         <section id="squadra" class="content-section">
             <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">La Squadra</h2>
             <p><small>Clicca su un nome per vedere la scheda tecnica</small></p>
-            
+
             <div class="card">
                 <strong><i class="fas fa-hands"></i> PORTIERI</strong>
                 <div class="player-list">
@@ -260,7 +430,7 @@
                     <span class="player-tag" onclick="openProfile('Andrea Nitti (Snake)', 'Portiere', '0', 'andrea_nitti.jpg')">Andrea Nitti(Snake)</span>
                 </div>
             </div>
-            
+
             <div class="card">
                 <strong><i class="fas fa-shield-alt"></i> DIFENSORI</strong>
                 <div class="player-list">
@@ -273,7 +443,7 @@
                     <span class="player-tag" onclick="openProfile('Davide Frigato (Friga)', 'TS', '0', 'frigato.jpg')">Davide Frigato</span>
                     <span class="player-tag" onclick="openProfile('Alessandro Carbonara', 'TS', '6', 'carbo_campioncino.png')">Alessandro Carbonara</span>
                     <span class="player-tag" onclick="openProfile('Daniel Gurzu', 'DC', '0', 'alexandru.jpg')">Daniel Gurzu</span>
-                    <span class="player-tag" onclick="openProfile('Flavio', 'TD', '1', 'francesco_urso.jpg')">Flavio</span>               
+                    <span class="player-tag" onclick="openProfile('Flavio', 'TD', '1', 'francesco_urso.jpg')">Flavio</span>
                     <span class="player-tag" onclick="openProfile('Kevin Inchingolo', 'TS', '0', 'paoli.jpg')">Kevin Inchingolo</span>
                     <span class="player-tag" onclick="openProfile('Cuggi', 'DC', '1', 'alexandru.jpg')">Cuggi</span>
                     <span class="player-tag" onclick="openProfile('Luca Balduzzi', 'TD', '4', 'alexandru.jpg')">Luca Balduzzi</span>
@@ -285,8 +455,8 @@
             <div class="card">
                 <strong><i class="fas fa-running"></i> CENTROCAMPISTI</strong>
                 <div class="player-list">
-                    <span class="player-tag" onclick="openProfile('Giuseppe Laineri (Peppix)', 'ES', '25', 'Peppix_campioncino.png','idolo di Soule')">Peppix</span>
-                    <span class="player-tag" onclick="openProfile('Mike Lo Bartolo (MikeLove)', 'CC', '19', 'mike_campioncino.png')">MikeLove</span>
+                    <span class="player-tag" onclick="openProfile('Giuseppe Laineri (Peppix)', 'ES', '26', 'Peppix_campioncino.png','idolo di Soule')">Peppix</span>
+                    <span class="player-tag" onclick="openProfile('Mike Lo Bartolo (MikeLove)', 'CC', '20', 'mike_campioncino.png')">MikeLove</span>
                     <span class="player-tag" onclick="openProfile('Riccardo Labate', 'ED', '2', 'riccardo_labate.jpg')">Riccardo Labate</span>
                     <span class="player-tag" onclick="openProfile('Lion', 'ED', '3', 'lion.jpg')">Lion</span>
                     <span class="player-tag" onclick="openProfile('Ivan Lo Bartolo', 'CC', '0', 'ivan_lobartolo.jpg')">Ivan Lo Bartolo</span>
@@ -295,7 +465,7 @@
                     <span class="player-tag" onclick="openProfile('Alessandro Macario (Maca)', 'CC', '1', 'macario.jpg')">Maca</span>
                     <span class="player-tag" onclick="openProfile('Danilo Carrabino', 'ED', '0', 'carrabino.jpg')">Danilo Carrabino</span>
                     <span class="player-tag" onclick="openProfile('Francesco Paoli', 'ES', '5', 'paoli.jpg')">Francesco Paoli</span>
-                    <span class="player-tag" onclick="openProfile('Mattia Scara', 'ES', '0', 'scara.jpg')">Mattia Scara</span>
+                    <span class="player-tag" onclick="openProfile('Mattia Scara', 'ES', '1', 'scara.jpg')">Mattia Scara</span>
                     <span class="player-tag" onclick="openProfile('Alessio Attene', 'CC', '10', 'attene.jpg')">Alessio Attene</span>
                     <span class="player-tag" onclick="openProfile('Manuel Scalerandi', 'CC', '7', 'scale.jpg')">Manuel Scalerandi</span>
                     <span class="player-tag" onclick="openProfile('Rob', 'CC', '6', 'rob.jpg')">Rob</span>
@@ -303,13 +473,14 @@
                     <span class="player-tag" onclick="openProfile('Daniel Giordano (Giorda)', 'ED', '4', 'Giorda_campioncino.png')">Giorda</span>
                     <span class="player-tag" onclick="openProfile('Stef', 'CC', '2', 'stef.jpg')">Stef</span>
                     <span class="player-tag" onclick="openProfile('Emanuele', 'ED', '3', 'ema.jpg')">Emanuele</span>
-                    <span class="player-tag" onclick="openProfile('Giovanni Gerratana', 'ED', '9', 'gio.jpg')">Gio Gerratana</span>
+                    <span class="player-tag" onclick="openProfile('Giovanni Gerratana', 'ED', '10', 'gio.jpg')">Gio Gerratana</span>
+                    <span class="player-tag" onclick="openProfile('Paul', 'ED', '3', 'gio.jpg')">Paul</span>
                 </div>
             </div>
 
             <div class="card">
                 <strong><i class="fas fa-bullseye"></i> ATTACCANTI</strong>
-                <div class="player-list">                    
+                <div class="player-list">
                     <span class="player-tag" onclick="openProfile('ScionPol', 'ATT', '0', 'scionpol.jpg')">ScionPol</span>
                     <span class="player-tag" onclick="openProfile('Marcello', 'ATT', '0', 'marcello.jpg')">Marcello</span>
                     <span class="player-tag" onclick="openProfile('Andrea Russo', 'ATT', '0', 'rvski.jpg')">Rvski</span>
@@ -322,474 +493,502 @@
         </section>
 
         <section id="marcatori" class="content-section">
-    <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Classifica Marcatori</h2>
-    <p><small>La corsa alla scarpa d'oro dello Sporting</small></p>
+            <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Classifica Marcatori</h2>
+            <p><small>La corsa alla scarpa d'oro dello Sporting</small></p>
 
-    <div class="marcatori-container">
-        
-        <div class="marcatore-row">
-            <div class="pos-numero">1</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Peppix</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 100%;"></div> </div>
-            </div>
-            <div class="gol-count">25<i class="fas fa-futbol"></i></div>
-        </div>
+            <div class="marcatori-container">
 
-
-<div class="marcatore-row">
-            <div class="pos-numero">2</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">MikeLove</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 90%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">1</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Peppix</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">26<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">19<i class="fas fa-futbol"></i></div>
-        </div>
 
- <div class="marcatore-row">
-            <div class="pos-numero">3</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Jurgen</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 80%;"></div>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">2</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">MikeLove</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">20<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">16<i class="fas fa-futbol"></i></div>
-        </div>
 
-
-<div class="marcatore-row">
-            <div class="pos-numero">4</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Alessio Attene</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 75%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">3</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Jurgen</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">16<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">10<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-<div class="marcatore-row">
-            <div class="pos-numero">5</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Giovanni Gerratana</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 65%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">4</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Alessio Attene</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">10<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">9<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-
-
-<div class="marcatore-row">
-            <div class="pos-numero">6</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Manuel Scalerandi</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 60%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">5</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Giovanni Gerratana</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">10<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">7<i class="fas fa-futbol"></i></div>
-        </div>
 
 
- <div class="marcatore-row">
-            <div class="pos-numero">7</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Rob</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 55%;"></div>
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">6</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Manuel Scalerandi</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">7<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">6<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-<div class="marcatore-row">
-            <div class="pos-numero">7</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Alessandro Carbonara</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 55%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">7</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Rob</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 55%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">6<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">6<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-
- <div class="marcatore-row">
-            <div class="pos-numero">8</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Fra Paoli</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 50%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">7</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Alessandro Carbonara</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 55%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">6<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">5<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-<div class="marcatore-row">
-            <div class="pos-numero">8</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Francesco Lepore</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 50%;"></div>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">8</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Fra Paoli</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">5<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">5<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-
-
-  
-           <div class="marcatore-row">
-            <div class="pos-numero">9</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Giorda</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 20%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">8</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Francesco Lepore</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">5<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">4<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-             <div class="marcatore-row">
-            <div class="pos-numero">9</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Luca Balduzzi</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 20%;"></div>
+
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">9</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Giorda</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">4<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">4<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-     
-       <div class="marcatore-row">
-            <div class="pos-numero">10</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Simone Laineri</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 15%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">9</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Luca Balduzzi</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">4<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">3<i class="fas fa-futbol"></i></div>
-        </div>
 
 
 
-
-
-               <div class="marcatore-row">
-            <div class="pos-numero">10</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Alexandru</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 15%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Simone Laineri</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">3<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-          <div class="marcatore-row">
-            <div class="pos-numero">10</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Giuseppe Urso</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 15%;"></div>
+
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Alexandru</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">3<i class="fas fa-futbol"></i></div>
-        </div>
-
-       
-
-  
 
 
-
-
-        <div class="marcatore-row">
-            <div class="pos-numero">10</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Lion</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 15%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Giuseppe Urso</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">3<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-  <div class="marcatore-row">
-            <div class="pos-numero">10</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Francesco Urso</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 15%;"></div>
+
+
+
+
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Lion</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">3<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-     <div class="marcatore-row">
-            <div class="pos-numero">10</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Emanuele</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 15%;"></div> </div>
-            </div>
-            <div class="gol-count">3<i class="fas fa-futbol"></i></div>
-        </div>
-
-
-        <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Riccardo Labate</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div> </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
-
-
-   
-      
-
- <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Belli</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Francesco Urso</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-<div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Astatello</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Paul</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
-      
 
-          <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Stefano Lorusso</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">10</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Emanuele</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">3<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-  <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Mirko Scianna</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Riccardo Labate</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
 
 
 
-       <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Federico Sardara</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Belli</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
 
- <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Carlo Cerrato</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Astatello</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-
-
- <div class="marcatore-row">
-            <div class="pos-numero">11</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Stef</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 10%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Stefano Lorusso</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">2<i class="fas fa-futbol"></i></div>
-        </div>
 
-         
 
-         <div class="marcatore-row">
-            <div class="pos-numero">12</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Cuggi</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 5%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Mirko Scianna</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">1<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-        <div class="marcatore-row">
-            <div class="pos-numero">12</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Riccardo</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 5%;"></div>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Federico Sardara</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">1<i class="fas fa-futbol"></i></div>
-        </div>
-      
 
-         <div class="marcatore-row">
-            <div class="pos-numero">12</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Flavio</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 5%;"></div>
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Carlo Cerrato</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">1<i class="fas fa-futbol"></i></div>
-        </div>
 
 
-          <div class="marcatore-row">
-            <div class="pos-numero">12</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Gianluca Miani</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 5%;"></div>
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">11</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Stef</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">2<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">1<i class="fas fa-futbol"></i></div>
-        </div>
 
-          <div class="marcatore-row">
-            <div class="pos-numero">12</div>
-            <div class="info-bomber">
-                <span class="nome-bomber">Alessandro Maca</span>
-                <div class="stat-bar-bg">
-                    <div class="stat-bar-fill" style="width: 5%;"></div>
+
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">12</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Cuggi</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">1<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-            <div class="gol-count">1<i class="fas fa-futbol"></i></div>
-        </div>
-         
-    </div>
-</section>
 
 
-
-<section id="notizie" class="content-section">
-    <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Notizie & Rumors</h2>
-    <p><small>Tutte le indiscrezioni sui Ragazzi dello Sporting</small></p>
-
-    <div style="margin-top: 20px;">
-        
-        <div class="card" style="border-left: 5px solid #e74c3c; position: relative;">
-            <span style="position: absolute; top: 10px; right: 15px; background: #e74c3c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; animation: pulse 1.5s infinite;">BREAKING NEWS</span>
-            <div style="display: flex; align-items: flex-start; gap: 15px;">
-                <div style="font-size: 2rem; color: #e74c3c;"><i class="fas fa-fire"></i></div>
-                <div>
-                    <h4 style="margin: 0; color: var(--main-black);">POST-MATCH</h4>
-                    <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
-                     Si conclude con la vittoria per 13 - 6 , a favore degli Sporting White. Una bella partita dove si evidenzia la prima tripletta di Alexandru la doppietta di S.Laineri e il poker di Peppix che lo eleggono MVP della gara.
-                    </p>
-                    <small style="color: #999;"><i class="far fa-clock"></i> Oggi</small>
+                <div class="marcatore-row">
+                    <div class="pos-numero">12</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Riccardo</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">1<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-        </div>
 
-        <div class="card" style="border-left: 5px solid #3498db;">
-            <div style="display: flex; align-items: flex-start; gap: 15px;">
-                <div style="font-size: 2rem; color: #3498db;"><i class="fas fa-handshake"></i></div>
-                <div>
-                    <h4 style="margin: 0; color: var(--main-black);">PAGELLONE</h4>
-                    <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
-                      <b>F.Labate </b>voto 7. Cerca in tutti i modi di salvare la sua squadra con delle parate importanti,nulla può sui gol subiti e nel suo autogol cercando di spazzar via la palla. Si prende il lusso anche in questa partita di partire palla al piede fino a centrocampo.  <br>
-                      <b>F.Sardara </b> voto 7.Gestisce molto bene la fase difensiva con chiusure importanti, nulla può sul suo autogol nella sfortunata deviazione.  <br>
-                      <b>Alexandru </b>voto 8.5. Lo stavamo aspettando tutti un suo gol, oggi ne ha fatti addirittura tre. Si contraddistingue anche nella fase difensiva dove esegue importanti interventi per bloccare le offensive avversarie <br>
-                      <b>Stef </b> voto 7. Smista e gestisce molto bene i palloni per i suoi compagni, anche lui molto sfortunato nell' autogol col tocco verso la sua porta cercando di anticipare l'avversario. <br>
-                      <b>Giorda </b>voto 6.5. Poco incisivo dal punto di vista offensivo dove crea poche occasioni per essere pericoloso, si contraddistingue come sempre per gli insulti verso se stesso che oramai sono di moda.<br>
-                      <b>Gio Gerratana </b>voto 8.5. Probabilmente il migliore dei suoi crea pericoli gestisce palla e realizza una bella tripletta.<br>
-                      <b>Fra Paoli </b> voto 7. Stranamente oggi poco incisivo sotto porta , sbaglia molte occasioni che non gli permettono di entrare nel tabellino marcatori in questa gara  <br>
-                      <b>Alessandro </b>voto 7.5. Ottimo debutto il suo, con i ragazzi dello Sporting, ci mette grinta, corsa e spirito di squadra, crea qualche occasione offensiva ma senza l'esito sperato. <br>
-                      <b>V.Aiello </b>voto 8. In fase difensiva ha giocato in maniera impeccabile, lasciando poco spazio alle azioni degli avversari, facendosi valere col suo fisico e i suoi perfetti anticipi<br>
-                      <b>Alex </b>voto 7.5. Sulla fascia destra corre e serve palloni importanti per i suoi compagni <br>
-                      <b>A.Carbonara </b>voto 8. Segna un bellissimo gol di testa da palla inattiva, ci riprova ma il pallone viene salvato sulla linea dal portiere.Inoltre offre come al solito qualità in fase di copertura e corsa sulla fascia sinistra per la sua squadra.<br>
-                      <b>S.Laineri </b>voto 8. Molto positiva la sua partita con corsa, grinta e una bella doppietta segnata. Un pò meno nel servire i suoi compagni con i suoi cross destinati alla missione di Artemis sulla luna.<br>
-                      <b>Peppix </b>voto 9.Mancava da un pò dai campi dello Sporting. Ritorna con un bel poker uno dei quali con un bel gol su punizione, forse il primo della sua storia.Stava per realizzare il gol della serata con un tiro da centrocampo che colpisce in pieno la traversa. <br>
-                      <b>MikeLove </b>voto 7.5. Anche oggi timbra il cartellino con uno bel gol da fuori aria, a centrocampo smista e serve ottimi palloni per creare occasioni ai suoi compagni. <br>
-                      <b>Rob </b>voto 7.5. Non la sua miglior prestazione ma quando la palla passa dai suoi piedi crea sempre pericoli e serve ottimi assist ai suoi compagni. <br>
-                      <b>F.Lepore </b>voto 7.5. Realizza una bella doppietta e fa sponde e giocate intelligenti per i suoi compagni degni di un vero attaccante.
-                    </p>   
-                    <small style="color: #999;"><i class="far fa-clock"></i> Oggi</small>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">12</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Flavio</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">1<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-        </div>
 
-        <div class="card" style="border-left: 5px solid var(--gold);">
-            <div style="display: flex; align-items: flex-start; gap: 15px;">
-                <div style="font-size: 2rem; color: var(--gold);"><i class="fas fa-futbol"></i></div>
-                <div>
-                    <h4 style="margin: 0; color: var(--main-black);">ALLA PROSSIMA</h4>
-                    <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
-                     Vi aspettiamo per la prossima partita. Sempre forza I Ragazzi dello Sporting.
-                     </p>                    
-                    <small style="color: #999;"><i class="far fa-clock"></i> OGGI</small>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">12</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Gianluca Miani</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">1<i class="fas fa-futbol"></i></div>
                 </div>
-            </div>
-        </div>
 
-    </div>
-    <style>
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-    </style>
-</section>
+                <div class="marcatore-row">
+                    <div class="pos-numero">12</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Alessandro Maca</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">1<i class="fas fa-futbol"></i></div>
+                </div>
+
+                <div class="marcatore-row">
+                    <div class="pos-numero">12</div>
+                    <div class="info-bomber">
+                        <span class="nome-bomber">Scara</span>
+                        <div class="stat-bar-bg">
+                            <div class="stat-bar-fill" style="width: 5%;"></div>
+                        </div>
+                    </div>
+                    <div class="gol-count">1<i class="fas fa-futbol"></i></div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section id="notizie" class="content-section">
+            <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Notizie & Rumors</h2>
+            <p><small>Tutte le indiscrezioni sui Ragazzi dello Sporting</small></p>
+
+            <div style="margin-top: 20px;">
+
+                <div class="card" style="border-left: 5px solid #e74c3c; position: relative;">
+                    <span style="position: absolute; top: 10px; right: 15px; background: #e74c3c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; animation: pulse 1.5s infinite;">BREAKING NEWS</span>
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <div style="font-size: 2rem; color: #e74c3c;"><i class="fas fa-fire"></i></div>
+                        <div>
+                            <h4 style="margin: 0; color: var(--main-black);">POST-MATCH</h4>
+                            <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
+                                Si conclude con un bel pareggio per 6 - 6. Una bella partita molto equilibrata dove spicca la tripletta di Paul, ma il vero MVP della gara è Gio Gerratana che coi suoi assist e il suo gol trascina la sua squadra.
+                            </p>
+                            <small style="color: #999;"><i class="far fa-clock"></i> Oggi</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="border-left: 5px solid #3498db;">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <div style="font-size: 2rem; color: #3498db;"><i class="fas fa-handshake"></i></div>
+                        <div>
+                            <h4 style="margin: 0; color: var(--main-black);">PAGELLONE</h4>
+                            <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
+                                <b>F.Labate </b>voto 7.5 . Come al solito delle ottime parate che tengono in piedi la sua squadra e la conducono al pareggio <br>
+                                <b>F.Sardara </b> voto 8.Leader difensivo, non si lascia superare facilmente e crea qualche pericolo alla squadra avversaria con parecchie conclusioni da fuori  <br>
+                                <b>Jack </b>voto 8. Fa il suo debutto e gioca in maniera impeccabile nel ruolo di difensore, ottime chiusure difensive e crea pericoli con qualche percussione in avanti. Benvenuto nei ragazzi dello Sporting  <br>
+                                <b>G.Gerratana </b> voto 8.5. Smista palloni con colpi di tacco e assist degni del miglior Pirlo, contribuisce al pareggio della sua squadra siglando anche un bellissimo gol che lo portano ad essere eletto MVP della partita. <br>
+                                <b>Paul </b>voto 8. Uno dei migliori in campo , realizza una bella tripletta (la prima per lui) e altre belle giocate di qualità<br>
+                                <b>Alexandru </b>voto 7. Non è stato lucido e concentrato come al solito, commette un paio di errori che portano al gol la squadra avversaria.Proverà a riscattarsi con una bellissima conclusione al volo finita alta sopra la traversa per pochi millimetri<br>
+                                <b>Vincenzo </b> voto 7.5.Una roccia , molto difficile da superare difende e attacca in maniera discreta , tenta un paio di volte la conclusione verso la porta ma con poca fortuna.  <br>
+                                <b>Scara </b>voto 8. Uno dei migliori della sua squadra con ottimi dribbling e spunti in velocità. Poco incisivo sotto porta con un solo gol segnato,rispetto a come siamo abituati a vederlo. <br>
+                                <b>MikeLove </b>voto 8. Gioca per la squadra e aiuta i compagni provando a servirli con ottimi passaggi. Realizza un bel gol a tu per tu col portiere.<br>
+                                <b>Peppix </b>voto 8. Sulla fascia sinistra è sempre pericoloso con corsa e dribbling.Realizza un bellissimo gol dribblando due difensori e concludendo in rete col piede debole. <br>
+                                                        
+                            <small style="color: #999;"><i class="far fa-clock"></i> Oggi</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="border-left: 5px solid var(--gold);">
+                    <div style="display: flex; align-items: flex-start; gap: 15px;">
+                        <div style="font-size: 2rem; color: var(--gold);"><i class="fas fa-futbol"></i></div>
+                        <div>
+                            <h4 style="margin: 0; color: var(--main-black);">ALLA PROSSIMA</h4>
+                            <p style="font-size: 0.85rem; color: #555; margin-top: 5px;">
+                                Vi aspettiamo per la prossima partita. Sempre forza I Ragazzi dello Sporting.
+                            </p>
+                            <small style="color: #999;"><i class="far fa-clock"></i> OGGI</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <style>
+                @keyframes pulse {
+                    0% {
+                        opacity: 1;
+                    }
+
+                    50% {
+                        opacity: 0.5;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            </style>
+        </section>
 
 
 
@@ -799,7 +998,7 @@
             <p><small>I riconoscimenti ufficiali della stagione 2026</small></p>
 
             <div class="premi-grid">
-                
+
                 <div class="premi-card">
                     <div class="bg-icon"><i class="fas fa-hands"></i></div>
                     <i class="fas fa-crown"></i>
@@ -835,77 +1034,78 @@
         </section>
 
         <section id="partite" class="content-section">
-    <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Calendario e Risultati</h2>
-    
-    <div style="margin-top: 20px;">
-        <p style="text-transform: uppercase; font-weight: bold; font-size: 0.8rem; color: var(--gold); margin-bottom: 10px;">L'ultimo match</p>
-        <div class="card" style="border-left: none; border-top: 5px solid var(--gold); padding: 20px 10px;">
-            
-            <div style="text-align:center; margin-bottom: 15px;">
-                <div style="font-size: 0.75rem; color: #555; background: #f9f9f9; padding: 5px 12px; border-radius: 20px; display: inline-flex; align-items: center; gap: 5px; border: 1px solid #eee;">
-                    <i class="fas fa-map-marker-alt" style="color: var(--gold);"></i>
-                    <span><strong>Sporting Friends Stadium</strong></span>
+            <h2 style="border-bottom: 3px solid var(--gold); padding-bottom: 10px; display: inline-block;">Calendario e Risultati</h2>
+
+            <div style="margin-top: 20px;">
+                <p style="text-transform: uppercase; font-weight: bold; font-size: 0.8rem; color: var(--gold); margin-bottom: 10px;">L'ultimo match</p>
+                <div class="card" style="border-left: none; border-top: 5px solid var(--gold); padding: 20px 10px;">
+
+                    <div style="text-align:center; margin-bottom: 15px;">
+                        <div style="font-size: 0.75rem; color: #555; background: #f9f9f9; padding: 5px 12px; border-radius: 20px; display: inline-flex; align-items: center; gap: 5px; border: 1px solid #eee;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--gold);"></i>
+                            <span><strong>Sporting Friends Stadium</strong></span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 5px;">
+
+                        <div style="flex: 1; text-align: center;">
+                            <img src="ragazzisporting.jpg" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #eee; object-fit: cover;">
+                            <div style="font-weight: bold; font-size: 0.85rem; margin-top: 5px; line-height: 1;">SPORTING<br>WHITE</div>
+                        </div>
+
+                        <div style="flex: 0 0 100px; text-align: center;">
+                            <div style="font-size: 1.4rem; font-weight: 800; color: var(--main-black); line-height: 1;">6 - 6</div>
+                            <div style="font-size: 0.6rem; color: #777; text-transform: uppercase; margin-top: 5px;">07 LUG (20:00)</div>
+                        </div>
+
+                        <div style="flex: 1; text-align: center;">
+                            <img src="ragazzisporting.jpg" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #eee; object-fit: cover;">
+                            <div style="font-weight: bold; font-size: 0.85rem; margin-top: 5px; line-height: 1;">SPORTING<br>BLACK</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #eee; font-size: 0.75rem; color: #666;">
+                        <div style="flex: 1; text-align: center; padding-right: 5px;">
+                            Paul (3) <br>
+                            G.Gerratana <br>
+                            C.Tristano <br>
+                            Mister x  <br>
+
+
+
+
+
+
+
+                        </div>
+                        <div style="flex: 0 0 40px;"></div>
+                        <div style="flex: 1; text-align: center; padding-left: 5px;">
+                            Eddy (2) <br>
+                            Peppix <br>
+                            Mikelove <br>
+                            Beggia <br>
+                            Scara
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 5px;">
-                
-                <div style="flex: 1; text-align: center;">
-                    <img src="ragazzisporting.jpg" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #eee; object-fit: cover;">
-                    <div style="font-weight: bold; font-size: 0.85rem; margin-top: 5px; line-height: 1;">SPORTING<br>WHITE</div>
+            <div style="margin-top: 30px;">
+                <p style="text-transform: uppercase; font-weight: bold; font-size: 0.8rem; color: #777; margin-bottom: 10px;">Risultati Precedenti</p>
+                <div class="card" style="display: flex; align-items: center; padding: 12px; gap: 10px;">
+                    <span style="font-weight: 600; flex: 1; text-align: left; font-size: 0.8rem;">SPORTING WHITE</span>
+                    <span style="background: var(--main-black); color: var(--gold); padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; min-width: 45px; text-align: center;">13 - 6</span>
+                    <span style="font-weight: 600; flex: 1; text-align: right; font-size: 0.8rem;">SPORTING BLACK</span>
                 </div>
-
-                <div style="flex: 0 0 100px; text-align: center;">
-                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--main-black); line-height: 1;">13 - 6</div>
-                    <div style="font-size: 0.6rem; color: #777; text-transform: uppercase; margin-top: 5px;">09 GIU (19:00)</div>
-                </div>
-
-                <div style="flex: 1; text-align: center;">
-                    <img src="ragazzisporting.jpg" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #eee; object-fit: cover;">
-                    <div style="font-weight: bold; font-size: 0.85rem; margin-top: 5px; line-height: 1;">SPORTING<br>BLACK</div>
+                <div class="card" style="display: flex; align-items: center; padding: 12px; gap: 10px;">
+                    <span style="font-weight: 600; flex: 1; text-align: left; font-size: 0.8rem;">SPORTING WHITE</span>
+                    <span style="background: var(--main-black); color: var(--gold); padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; min-width: 45px; text-align: center;">6 - 4</span>
+                    <span style="font-weight: 600; flex: 1; text-align: right; font-size: 0.8rem;">SPORTING BLACK</span>
                 </div>
             </div>
-
-            <div style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #eee; font-size: 0.75rem; color: #666;">
-                <div style="flex: 1; text-align: center; padding-right: 5px;">
-                  Peppix (4) <br>
-                  S.Laineri (2) <br>
-                  F.Lepore (2) <br>
-                  A.Carbonara  <br>
-                  MikeLove <br>
-                  Autogol (3)
-                 
-                 
-            
-                 
-                 
-                     
-                </div>
-                <div style="flex: 0 0 40px;"></div>
-                <div style="flex: 1; text-align: center; padding-left: 5px;">
-                 Alexandru (3) <br>
-                 G.Gerratana (3)
-
-                </div>
-            </div>
-                  
-        </div>
-    </div>
-
-    <div style="margin-top: 30px;">
-        <p style="text-transform: uppercase; font-weight: bold; font-size: 0.8rem; color: #777; margin-bottom: 10px;">Risultati Precedenti</p>
-        <div class="card" style="display: flex; align-items: center; padding: 12px; gap: 10px;">
-            <span style="font-weight: 600; flex: 1; text-align: left; font-size: 0.8rem;">SPORTING WHITE</span>
-            <span style="background: var(--main-black); color: var(--gold); padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; min-width: 45px; text-align: center;">6 - 4</span>
-            <span style="font-weight: 600; flex: 1; text-align: right; font-size: 0.8rem;">SPORTING BLACK</span>
-        </div>
-        <div class="card" style="display: flex; align-items: center; padding: 12px; gap: 10px;">
-            <span style="font-weight: 600; flex: 1; text-align: left; font-size: 0.8rem;">SPORTING WHITE</span>
-            <span style="background: var(--main-black); color: var(--gold); padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; min-width: 45px; text-align: center;">4 - 8</span>
-            <span style="font-weight: 600; flex: 1; text-align: right; font-size: 0.8rem;">SPORTING BLACK</span>
-        </div>
-    </div>
-</section>
+        </section>
     </div>
 
     <div id="playerModal" class="player-modal">
@@ -916,8 +1116,9 @@
             <p id="pRole" style="text-transform: uppercase; font-weight: bold; color: #555;"></p>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px;">
                 <div style="background: white; padding: 10px; border-radius: 10px;"><strong>Gol</strong><br><span id="pSkill"></span></div>
-                <div style="background: white; padding: 10px; border-radius: 10px;"><strong>Caratteristiche</strong><br><span id="pStatus" style="font-size: 0.85rem;"></span>
-</div>
+                <div style="background: white; padding: 10px; border-radius: 10px;">
+                    <strong>Caratteristiche</strong><br><span id="pStatus" style="font-size: 0.85rem;"></span>
+                </div>
             </div>
             <button onclick="closeProfile()" style="margin-top:25px; padding:10px 25px; background:var(--main-black); color:var(--gold); border:none; border-radius:5px; cursor:pointer; font-weight:bold;">TORNA ALLA SQUADRA</button>
         </div>
@@ -929,10 +1130,10 @@
         function showSection(sectionId) {
             const allSections = document.querySelectorAll('.content-section');
             allSections.forEach(s => s.style.display = 'none');
-            
+
             const links = document.querySelectorAll('nav a');
             links.forEach(l => l.classList.remove('active'));
-            
+
             const wrapper = document.getElementById('other-sections-wrapper');
             const homeSection = document.getElementById('home');
 
@@ -943,38 +1144,38 @@
                 wrapper.style.display = 'block';
                 homeSection.style.display = 'none';
                 const target = document.getElementById(sectionId);
-                if(target) target.style.display = 'block';
+                if (target) target.style.display = 'block';
             }
 
             const activeLink = document.querySelector(`nav a[data-section="${sectionId}"]`);
-            if(activeLink) activeLink.classList.add('active');
+            if (activeLink) activeLink.classList.add('active');
             localStorage.setItem('lastSection', sectionId);
         }
 
-        window.onload = function() {
+        window.onload = function () {
             const savedSection = localStorage.getItem('lastSection') || 'home';
             showSection(savedSection);
         };
 
         function openProfile(name, role, skill, photoUrl, statusText) {
-    document.getElementById('pName').innerText = name;
-    document.getElementById('pRole').innerText = role;
-    document.getElementById('pSkill').innerText = skill;
-    
-    // Questa riga aggiorna lo status con il testo personalizzato
-    document.getElementById('pStatus').innerText = statusText || "Disponibile";
-    
-    const modalImg = document.getElementById('pModalImg');
-    modalImg.src = photoUrl;
-    modalImg.onerror = function() { this.src = 'ragazzisporting.jpg'; };
-    document.getElementById('playerModal').style.display = 'block';
-}
+            document.getElementById('pName').innerText = name;
+            document.getElementById('pRole').innerText = role;
+            document.getElementById('pSkill').innerText = skill;
+
+            // Questa riga aggiorna lo status con il testo personalizzato
+            document.getElementById('pStatus').innerText = statusText || "Disponibile";
+
+            const modalImg = document.getElementById('pModalImg');
+            modalImg.src = photoUrl;
+            modalImg.onerror = function () { this.src = 'ragazzisporting.jpg'; };
+            document.getElementById('playerModal').style.display = 'block';
+        }
 
         function closeProfile() {
             document.getElementById('playerModal').style.display = 'none';
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == document.getElementById('playerModal')) { closeProfile(); }
         }
     </script>
